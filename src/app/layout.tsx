@@ -42,6 +42,11 @@ export default function RootLayout({
       <head>
         <link rel="canonical" href="https://convertflow.com" />
         <meta name="theme-color" content="#0f172a" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6471791415788302"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className={inter.className}>{children}</body>
     </html>

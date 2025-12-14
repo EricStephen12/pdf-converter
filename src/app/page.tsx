@@ -24,6 +24,28 @@ const imageTools = [
   { id: 'compress-image', name: 'Compress Image', description: 'Optimize for web', icon: '⚡', color: 'from-red-500 to-orange-500', href: '/tools/compress-image' },
 ];
 
+const documentTools = [
+  { id: 'word-to-pdf', name: 'Word to PDF', description: 'Convert DOC/DOCX files', icon: '📝', color: 'from-blue-500 to-indigo-500', href: '/tools/word-to-pdf' },
+  { id: 'excel-to-pdf', name: 'Excel to PDF', description: 'Convert XLS/XLSX files', icon: '📊', color: 'from-green-500 to-teal-500', href: '/tools/excel-to-pdf' },
+  { id: 'ppt-to-pdf', name: 'PowerPoint to PDF', description: 'Convert PPT/PPTX files', icon: '📽️', color: 'from-orange-500 to-red-500', href: '/tools/ppt-to-pdf' },
+];
+
+const videoTools = [
+  { id: 'video-converter', name: 'Video Converter', description: 'MP4, WebM, AVI, MOV', icon: '🎬', color: 'from-purple-500 to-pink-500', href: '/tools/video-converter' },
+  { id: 'compress-video', name: 'Compress Video', description: 'Reduce file size', icon: '🗜️', color: 'from-teal-500 to-cyan-500', href: '/tools/compress-video' },
+  { id: 'extract-audio', name: 'Extract Audio', description: 'Get audio from video', icon: '🎵', color: 'from-indigo-500 to-purple-500', href: '/tools/extract-audio' },
+];
+
+const audioTools = [
+  { id: 'audio-converter', name: 'Audio Converter', description: 'MP3, WAV, M4A, OGG', icon: '🎧', color: 'from-pink-500 to-red-500', href: '/tools/audio-converter' },
+  { id: 'compress-audio', name: 'Compress Audio', description: 'Reduce audio size', icon: '📉', color: 'from-cyan-500 to-blue-500', href: '/tools/compress-audio' },
+  { id: 'trim-audio', name: 'Trim Audio', description: 'Cut audio clips', icon: '✂️', color: 'from-orange-500 to-yellow-500', href: '/tools/trim-audio' },
+];
+
+const utilityTools = [
+  { id: 'qr-generator', name: 'QR Generator', description: 'Create custom QR codes', icon: '📱', color: 'from-indigo-500 to-purple-500', href: '/tools/qr-generator' },
+];
+
 const stats = [
   { value: '100%', label: 'Free Forever' },
   { value: '0', label: 'Files Stored' },
@@ -98,7 +120,23 @@ export default function Home() {
       {/* Tools Section */}
       <section id="tools" className="py-24 bg-gradient-to-b from-slate-950 to-slate-900">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          {/* Document Tools - NEW */}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 rounded-full px-4 py-1 mb-4">
+              <span className="text-blue-400 text-sm font-medium">🔥 Most Popular</span>
+            </div>
+            <h2 className="text-4xl font-bold text-white mb-4">Document Tools</h2>
+            <p className="text-gray-400 text-lg">Convert Office documents to PDF</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-20">
+            {documentTools.map(tool => (
+              <ToolCard key={tool.id} {...tool} />
+            ))}
+          </div>
+
+          {/* PDF Tools */}
+          <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">PDF Tools</h2>
             <p className="text-gray-400 text-lg">Everything you need to work with PDFs</p>
           </div>
@@ -109,13 +147,56 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="text-center mb-16">
+          {/* Video Tools - NEW */}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 rounded-full px-4 py-1 mb-4">
+              <span className="text-purple-400 text-sm font-medium">✨ New</span>
+            </div>
+            <h2 className="text-4xl font-bold text-white mb-4">Video Tools</h2>
+            <p className="text-gray-400 text-lg">Convert, compress, and extract from videos</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-20">
+            {videoTools.map(tool => (
+              <ToolCard key={tool.id} {...tool} />
+            ))}
+          </div>
+
+          {/* Audio Tools - NEW */}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-pink-500/10 border border-pink-500/30 rounded-full px-4 py-1 mb-4">
+              <span className="text-pink-400 text-sm font-medium">✨ New</span>
+            </div>
+            <h2 className="text-4xl font-bold text-white mb-4">Audio Tools</h2>
+            <p className="text-gray-400 text-lg">Convert, compress, and trim audio files</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-20">
+            {audioTools.map(tool => (
+              <ToolCard key={tool.id} {...tool} />
+            ))}
+          </div>
+
+          {/* Image Tools */}
+          <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">Image Tools</h2>
             <p className="text-gray-400 text-lg">Convert and optimize your images</p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 mb-20">
             {imageTools.map(tool => (
+              <ToolCard key={tool.id} {...tool} />
+            ))}
+          </div>
+
+          {/* Utility Tools - NEW */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4">Utility Tools</h2>
+            <p className="text-gray-400 text-lg">Handy tools for everyday tasks</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {utilityTools.map(tool => (
               <ToolCard key={tool.id} {...tool} />
             ))}
           </div>
