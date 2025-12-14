@@ -36,6 +36,15 @@ async function getFFmpeg(): Promise<FFmpeg> {
   return ffmpeg;
 }
 
+function toBlob(data: Uint8Array | string, mimeType: string): Blob {
+  if (typeof data === 'string') {
+    return new Blob([data], { type: mimeType });
+  }
+  // Create a new Uint8Array to ensure proper ArrayBuffer type
+  const uint8 = new Uint8Array(data);
+  return new Blob([uint8], { type: mimeType });
+}
+
 export async function convertAudio(
   file: File,
   outputFormat: 'mp3' | 'wav' | 'm4a' | 'ogg' | 'flac',
@@ -53,7 +62,6 @@ export async function convertAudio(
   
   await ff.writeFile(inputName, await fetchFile(file));
   
-  // Convert with appropriate settings for each format
   if (outputFormat === 'mp3') {
     await ff.exec(['-i', inputName, '-q:a', '2', outputName]);
   } else if (outputFormat === 'wav') {
@@ -68,7 +76,6 @@ export async function convertAudio(
   
   const data = await ff.readFile(outputName);
   
-  // Cleanup
   await ff.deleteFile(inputName);
   await ff.deleteFile(outputName);
   
@@ -80,7 +87,7 @@ export async function convertAudio(
     flac: 'audio/flac'
   };
   
-  return new Blob([data], { type: mimeTypes[outputFormat] });
+  return toBlob(data as Uint8Array, mimeTypes[outputFormat]);
 }
 
 export async function compressAudio(
@@ -103,11 +110,10 @@ export async function compressAudio(
   
   const data = await ff.readFile(outputName);
   
-  // Cleanup
   await ff.deleteFile(inputName);
   await ff.deleteFile(outputName);
   
-  return new Blob([data], { type: 'audio/mpeg' });
+  return toBlob(data as Uint8Array, 'audio/mpeg');
 }
 
 export async function trimAudio(
@@ -139,9 +145,8 @@ export async function trimAudio(
   
   const data = await ff.readFile(outputName);
   
-  // Cleanup
   await ff.deleteFile(inputName);
   await ff.deleteFile(outputName);
   
-  return new Blob([data], { type: file.type || 'audio/mpeg' });
+  return toBlob(data as Uint8Array, file.type || 'audio/mpeg');
 }

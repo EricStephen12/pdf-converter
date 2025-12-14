@@ -1,4 +1,14 @@
+# robots.txt for ConvertFlow
 User-agent: *
 Allow: /
 
+# Sitemap
 Sitemap: https://convertflow.com/sitemap.xml
+
+# Crawl-delay (optional, be nice to servers)
+Crawl-delay: 1
+
+# Block unnecessary paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/

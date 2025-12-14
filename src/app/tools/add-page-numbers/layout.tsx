@@ -1,0 +1,19 @@
+import { generateToolMetadata, generateToolStructuredData } from '@/lib/seo-config';
+
+export const metadata = generateToolMetadata('add-page-numbers');
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  const structuredData = generateToolStructuredData('add-page-numbers');
+  
+  return (
+    <>
+      {structuredData && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      )}
+      {children}
+    </>
+  );
+}

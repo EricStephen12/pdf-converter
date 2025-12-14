@@ -34,8 +34,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'audio-converter',
     'compress-audio',
     'trim-audio',
+    // Social Media Tools
+    'youtube-thumbnail',
+    'social-media-resizer',
+    'hashtag-generator',
     // Utility Tools
     'qr-generator',
+    'favicon-generator',
+    'color-extractor',
   ];
 
   const toolPages = tools.map((tool) => ({

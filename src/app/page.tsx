@@ -42,8 +42,16 @@ const audioTools = [
   { id: 'trim-audio', name: 'Trim Audio', description: 'Cut audio clips', icon: '✂️', color: 'from-orange-500 to-yellow-500', href: '/tools/trim-audio' },
 ];
 
+const socialTools = [
+  { id: 'youtube-thumbnail', name: 'YouTube Thumbnail', description: 'Download video thumbnails', icon: '▶️', color: 'from-red-500 to-orange-500', href: '/tools/youtube-thumbnail' },
+  { id: 'social-media-resizer', name: 'Social Media Resizer', description: 'Perfect sizes for all platforms', icon: '📐', color: 'from-pink-500 to-purple-500', href: '/tools/social-media-resizer' },
+  { id: 'hashtag-generator', name: 'Hashtag Generator', description: 'Trending hashtags for posts', icon: '#️⃣', color: 'from-blue-500 to-cyan-500', href: '/tools/hashtag-generator' },
+];
+
 const utilityTools = [
   { id: 'qr-generator', name: 'QR Generator', description: 'Create custom QR codes', icon: '📱', color: 'from-indigo-500 to-purple-500', href: '/tools/qr-generator' },
+  { id: 'favicon-generator', name: 'Favicon Generator', description: 'All sizes from one image', icon: '⭐', color: 'from-yellow-500 to-orange-500', href: '/tools/favicon-generator' },
+  { id: 'color-extractor', name: 'Color Extractor', description: 'Extract palette from images', icon: '🎨', color: 'from-purple-500 to-pink-500', href: '/tools/color-extractor' },
 ];
 
 const stats = [
@@ -189,7 +197,22 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Utility Tools - NEW */}
+          {/* Social Media Tools - NEW */}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/30 rounded-full px-4 py-1 mb-4">
+              <span className="text-red-400 text-sm font-medium">🔥 Popular</span>
+            </div>
+            <h2 className="text-4xl font-bold text-white mb-4">Social Media Tools</h2>
+            <p className="text-gray-400 text-lg">Boost your social media presence</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-20">
+            {socialTools.map(tool => (
+              <ToolCard key={tool.id} {...tool} />
+            ))}
+          </div>
+
+          {/* Utility Tools */}
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">Utility Tools</h2>
             <p className="text-gray-400 text-lg">Handy tools for everyday tasks</p>

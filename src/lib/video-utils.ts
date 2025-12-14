@@ -10,7 +10,6 @@ let loading = false;
 export async function getFFmpeg(): Promise<FFmpeg> {
   if (ffmpeg && loaded) return ffmpeg;
   if (loading) {
-    // Wait for loading to complete
     while (loading) {
       await new Promise(resolve => setTimeout(resolve, 100));
     }
@@ -37,6 +36,15 @@ export async function getFFmpeg(): Promise<FFmpeg> {
   return ffmpeg;
 }
 
+function toBlob(data: Uint8Array | string, mimeType: string): Blob {
+  if (typeof data === 'string') {
+    return new Blob([data], { type: mimeType });
+  }
+  // Create a new Uint8Array to ensure proper ArrayBuffer type
+  const uint8 = new Uint8Array(data);
+  return new Blob([uint8], { type: mimeType });
+}
+
 export async function convertVideo(
   file: File,
   outputFormat: string,
@@ -54,7 +62,6 @@ export async function convertVideo(
   
   await ff.writeFile(inputName, await fetchFile(file));
   
-  // Use copy codec when possible for speed, otherwise re-encode
   if (outputFormat === 'mp4') {
     await ff.exec(['-i', inputName, '-c', 'copy', '-movflags', '+faststart', outputName]);
   } else if (outputFormat === 'webm') {
@@ -65,7 +72,6 @@ export async function convertVideo(
   
   const data = await ff.readFile(outputName);
   
-  // Cleanup
   await ff.deleteFile(inputName);
   await ff.deleteFile(outputName);
   
@@ -76,7 +82,7 @@ export async function convertVideo(
     mov: 'video/quicktime',
   };
   
-  return new Blob([data], { type: mimeTypes[outputFormat] || 'video/mp4' });
+  return toBlob(data as Uint8Array, mimeTypes[outputFormat] || 'video/mp4');
 }
 
 export async function compressVideo(
@@ -90,7 +96,6 @@ export async function compressVideo(
     ff.on('progress', ({ progress }) => onProgress(Math.round(progress * 100)));
   }
   
-  // Use different bitrates for compression
   const videoBitrate = quality === 'low' ? '500k' : quality === 'medium' ? '1000k' : '2000k';
   const audioBitrate = quality === 'low' ? '64k' : quality === 'medium' ? '128k' : '192k';
   
@@ -109,11 +114,10 @@ export async function compressVideo(
   
   const data = await ff.readFile(outputName);
   
-  // Cleanup
   await ff.deleteFile(inputName);
   await ff.deleteFile(outputName);
   
-  return new Blob([data], { type: 'video/mp4' });
+  return toBlob(data as Uint8Array, 'video/mp4');
 }
 
 export async function extractAudio(
@@ -133,7 +137,6 @@ export async function extractAudio(
   
   await ff.writeFile(inputName, await fetchFile(file));
   
-  // Extract audio with appropriate codec
   if (format === 'mp3') {
     await ff.exec(['-i', inputName, '-vn', '-q:a', '2', outputName]);
   } else if (format === 'wav') {
@@ -144,10 +147,9 @@ export async function extractAudio(
   
   const data = await ff.readFile(outputName);
   
-  // Cleanup
   await ff.deleteFile(inputName);
   await ff.deleteFile(outputName);
   
   const mimeTypes = { mp3: 'audio/mpeg', wav: 'audio/wav', m4a: 'audio/mp4' };
-  return new Blob([data], { type: mimeTypes[format] });
+  return toBlob(data as Uint8Array, mimeTypes[format]);
 }
