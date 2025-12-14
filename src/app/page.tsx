@@ -87,9 +87,17 @@ export default function Home() {
         
         <div className="container mx-auto px-4 py-24 relative">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
-              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              <span className="text-sm text-gray-300">100% Free • No Sign Up • Privacy First</span>
+            <div className="flex flex-col sm:flex-row items-center gap-3 mb-6">
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                <span className="text-sm text-gray-300">100% Free • No Sign Up • Privacy First</span>
+              </div>
+              {/* Uncomment during Product Hunt launch:
+              <a href="https://www.producthunt.com/posts/convertflow" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-orange-500/20 border border-orange-500/40 rounded-full px-4 py-2 hover:bg-orange-500/30 transition">
+                <span className="text-orange-400">🚀</span>
+                <span className="text-sm text-orange-300">Live on Product Hunt!</span>
+              </a>
+              */}
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
@@ -317,12 +325,62 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-slate-950 border-t border-white/10 py-12">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-2">
-              <img src="/logo.png" alt="ConvertFlow" className="w-8 h-8 rounded-lg" />
-              <span className="font-semibold text-white">ConvertFlow</span>
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <img src="/logo.png" alt="ConvertFlow" className="w-8 h-8 rounded-lg" />
+                <span className="font-semibold text-white">ConvertFlow</span>
+              </div>
+              <p className="text-gray-400 text-sm">Free online tools to convert, compress, and edit your files. 100% private - everything runs in your browser.</p>
             </div>
+            
+            <div>
+              <h4 className="text-white font-semibold mb-4">Popular Tools</h4>
+              <div className="grid grid-cols-2 gap-2 text-sm">
+                <a href="/tools/merge-pdf" className="text-gray-400 hover:text-white transition">Merge PDF</a>
+                <a href="/tools/compress-pdf" className="text-gray-400 hover:text-white transition">Compress PDF</a>
+                <a href="/tools/jpg-to-pdf" className="text-gray-400 hover:text-white transition">JPG to PDF</a>
+                <a href="/tools/pdf-to-jpg" className="text-gray-400 hover:text-white transition">PDF to JPG</a>
+                <a href="/tools/compress-image" className="text-gray-400 hover:text-white transition">Compress Image</a>
+                <a href="/tools/qr-generator" className="text-gray-400 hover:text-white transition">QR Generator</a>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="text-white font-semibold mb-4">Share & Support</h4>
+              <p className="text-gray-400 text-sm mb-3">Love ConvertFlow? Share it with others!</p>
+              <div className="flex gap-2">
+                <a 
+                  href="https://twitter.com/intent/tweet?url=https://convertflow.site&text=Check%20out%20ConvertFlow%20-%2030%2B%20free%20file%20conversion%20tools!" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 bg-white/10 hover:bg-blue-500 rounded-lg flex items-center justify-center text-white transition"
+                >
+                  𝕏
+                </a>
+                <a 
+                  href="https://www.linkedin.com/sharing/share-offsite/?url=https://convertflow.site" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 bg-white/10 hover:bg-blue-600 rounded-lg flex items-center justify-center text-white text-sm font-bold transition"
+                >
+                  in
+                </a>
+                <a 
+                  href="https://reddit.com/submit?url=https://convertflow.site&title=ConvertFlow%20-%2030%2B%20free%20file%20tools" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 bg-white/10 hover:bg-orange-600 rounded-lg flex items-center justify-center text-white transition"
+                >
+                  ⬆
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-gray-500 text-sm">© 2024 ConvertFlow. A subsidiary of Ricks Limited. All rights reserved.</p>
+            <p className="text-gray-600 text-xs">Made with ❤️ for productivity lovers everywhere</p>
           </div>
         </div>
       </footer>
