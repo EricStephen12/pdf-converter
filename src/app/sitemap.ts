@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://convertflow.com';
+  const baseUrl = 'https://fileforge.tools';
   
   const tools = [
     // PDF Tools

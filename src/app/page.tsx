@@ -68,8 +68,8 @@ export default function Home() {
       <header className="border-b border-white/10">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="ConvertFlow" className="w-10 h-10 rounded-xl" />
-            <span className="text-xl font-bold text-white">ConvertFlow</span>
+            <img src="/logo.png" alt="FileForge" className="w-10 h-10 rounded-xl" />
+            <span className="text-xl font-bold text-white">FileForge</span>
           </div>
           <nav className="hidden md:flex items-center gap-6">
             <a href="#tools" className="text-gray-400 hover:text-white transition">Tools</a>
@@ -107,9 +107,12 @@ export default function Home() {
               <a href="#tools" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25">
                 Start Converting — It&apos;s Free
               </a>
-              <button className="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg transition border border-white/20">
+              <a 
+                href="#how-it-works"
+                className="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg transition border border-white/20"
+              >
                 See How It Works
-              </button>
+              </a>
             </div>
 
             {/* Stats */}
@@ -122,6 +125,44 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section id="how-it-works" className="py-20 bg-slate-950">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">How It Works</h2>
+            <p className="text-gray-400">Convert any file in 3 simple steps</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4">
+                1
+              </div>
+              <h3 className="text-white font-semibold mb-2">Select Your File</h3>
+              <p className="text-gray-400 text-sm">Drag and drop or click to upload your file. We support all major formats.</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-orange-500 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4">
+                2
+              </div>
+              <h3 className="text-white font-semibold mb-2">Choose Options</h3>
+              <p className="text-gray-400 text-sm">Select your output format and adjust settings if needed.</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4">
+                3
+              </div>
+              <h3 className="text-white font-semibold mb-2">Download Result</h3>
+              <p className="text-gray-400 text-sm">Your converted file is ready instantly. Download and use it anywhere.</p>
+            </div>
+          </div>
+          
+
         </div>
       </section>
 
@@ -230,7 +271,7 @@ export default function Home() {
       <section id="features" className="py-24 bg-slate-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Why Choose ConvertFlow?</h2>
+            <h2 className="text-4xl font-bold text-white mb-4">Why Choose FileForge?</h2>
             <p className="text-gray-400 text-lg">Built for speed, privacy, and simplicity</p>
           </div>
           
@@ -266,7 +307,7 @@ export default function Home() {
       <section className="py-24 bg-gradient-to-br from-purple-900/50 to-pink-900/50">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-white mb-4">Ready to Convert?</h2>
-          <p className="text-gray-300 text-lg mb-8">Join thousands of users who trust ConvertFlow for their daily conversions.</p>
+          <p className="text-gray-300 text-lg mb-8">Join thousands of users who trust FileForge for their daily conversions.</p>
           <a href="#tools" className="inline-block bg-white text-slate-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition">
             Get Started — Free
           </a>
@@ -278,10 +319,10 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <img src="/logo.png" alt="ConvertFlow" className="w-8 h-8 rounded-lg" />
-              <span className="font-semibold text-white">ConvertFlow</span>
+              <img src="/logo.png" alt="FileForge" className="w-8 h-8 rounded-lg" />
+              <span className="font-semibold text-white">FileForge</span>
             </div>
-            <p className="text-gray-500 text-sm">© 2024 ConvertFlow. A subsidiary of Ricks Limited. All rights reserved.</p>
+            <p className="text-gray-500 text-sm">© 2024 FileForge. A subsidiary of Ricks Limited. All rights reserved.</p>
           </div>
         </div>
       </footer>
