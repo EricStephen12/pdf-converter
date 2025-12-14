@@ -1,6 +1,6 @@
 {
-  "name": "FileForge - Free Online Converter Tools",
-  "short_name": "FileForge",
+  "name": "ConvertFlow - Free Online Converter Tools",
+  "short_name": "ConvertFlow",
   "description": "Convert, compress, merge PDFs, images, videos and audio files for free. 100% private.",
   "start_url": "/",
   "display": "standalone",

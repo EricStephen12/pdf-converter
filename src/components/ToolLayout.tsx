@@ -34,8 +34,8 @@ export function ToolLayout({ title, description, icon, color, children }: ToolLa
       <header className="border-b border-white/10">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <img src="/logo.png" alt="FileForge" className="w-10 h-10 rounded-xl" />
-            <span className="text-xl font-bold text-white">FileForge</span>
+            <img src="/logo.png" alt="ConvertFlow" className="w-10 h-10 rounded-xl" />
+            <span className="text-xl font-bold text-white">ConvertFlow</span>
           </Link>
           <Link href="/" className="text-gray-400 hover:text-white transition flex items-center gap-2">
             ← All Tools
@@ -89,7 +89,7 @@ export function ToolLayout({ title, description, icon, color, children }: ToolLa
       {/* Footer */}
       <footer className="bg-slate-950 border-t border-white/10 py-8">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-500 text-sm">© 2024 FileForge. A subsidiary of Ricks Limited. All rights reserved.</p>
+          <p className="text-gray-500 text-sm">© 2024 ConvertFlow. A subsidiary of Ricks Limited. All rights reserved.</p>
         </div>
       </footer>
     </main>

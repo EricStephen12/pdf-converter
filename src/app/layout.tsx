@@ -5,10 +5,10 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://fileforge.tools'),
+  metadataBase: new URL('https://convertflow.site'),
   title: {
-    default: "FileForge - Free Online PDF, Image, Video & Audio Converter Tools",
-    template: "%s | FileForge"
+    default: "ConvertFlow - Free Online PDF, Image, Video & Audio Converter Tools",
+    template: "%s | ConvertFlow"
   },
   description: "Convert, compress, merge PDFs, images, videos and audio files for free. No signup, no upload - everything runs in your browser. 100% private and secure. 30+ free tools.",
   keywords: [
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
     "QR code generator", "YouTube thumbnail downloader", "favicon generator",
     "free online tools", "file converter", "document converter"
   ],
-  authors: [{ name: "Ricks Limited", url: "https://fileforge.tools" }],
-  creator: "FileForge by Ricks Limited",
+  authors: [{ name: "Ricks Limited", url: "https://convertflow.site" }],
+  creator: "ConvertFlow by Ricks Limited",
   publisher: "Ricks Limited",
   robots: {
     index: true,
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://fileforge.tools",
-    siteName: "FileForge",
-    title: "FileForge - Free Online PDF, Image, Video & Audio Converter",
+    url: "https://convertflow.site",
+    siteName: "ConvertFlow",
+    title: "ConvertFlow - Free Online PDF, Image, Video & Audio Converter",
     description: "30+ free tools to convert, compress, merge PDFs, images, videos and audio. No signup required. 100% private - files never leave your device.",
     images: [{ 
       url: "/og-image.png", 
@@ -48,16 +48,16 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FileForge - Free Online Converter Tools",
+    title: "ConvertFlow - Free Online Converter Tools",
     description: "30+ free tools to convert PDFs, images, videos and audio. No signup required.",
     images: ["/og-image.png"],
-    creator: "@fileaborge",
+    creator: "@convertflow",
   },
   verification: {
     google: "google18702c24803ee8f3",
   },
   alternates: {
-    canonical: "https://fileforge.tools",
+    canonical: "https://convertflow.site",
   },
   category: "technology",
 };
@@ -67,33 +67,33 @@ const structuredData = {
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://fileforge.tools/#website",
-      "url": "https://fileforge.tools",
-      "name": "FileForge",
+      "@id": "https://convertflow.site/#website",
+      "url": "https://convertflow.site",
+      "name": "ConvertFlow",
       "description": "Free online tools to convert, compress, and edit PDFs, images, videos, and audio files",
       "publisher": {
-        "@id": "https://fileforge.tools/#organization"
+        "@id": "https://convertflow.site/#organization"
       },
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://fileforge.tools/?s={search_term_string}",
+        "target": "https://convertflow.site/?s={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     },
     {
       "@type": "Organization",
-      "@id": "https://fileforge.tools/#organization",
-      "name": "FileForge",
-      "url": "https://fileforge.tools",
+      "@id": "https://convertflow.site/#organization",
+      "name": "ConvertFlow",
+      "url": "https://convertflow.site",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://fileforge.tools/logo.png"
+        "url": "https://convertflow.site/logo.png"
       },
       "sameAs": []
     },
     {
       "@type": "SoftwareApplication",
-      "name": "FileForge",
+      "name": "ConvertFlow",
       "applicationCategory": "UtilityApplication",
       "operatingSystem": "Any",
       "offers": {

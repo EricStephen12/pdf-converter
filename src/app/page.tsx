@@ -68,8 +68,8 @@ export default function Home() {
       <header className="border-b border-white/10">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="FileForge" className="w-10 h-10 rounded-xl" />
-            <span className="text-xl font-bold text-white">FileForge</span>
+            <img src="/logo.png" alt="ConvertFlow" className="w-10 h-10 rounded-xl" />
+            <span className="text-xl font-bold text-white">ConvertFlow</span>
           </div>
           <nav className="hidden md:flex items-center gap-6">
             <a href="#tools" className="text-gray-400 hover:text-white transition">Tools</a>
@@ -271,7 +271,7 @@ export default function Home() {
       <section id="features" className="py-24 bg-slate-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Why Choose FileForge?</h2>
+            <h2 className="text-4xl font-bold text-white mb-4">Why Choose ConvertFlow?</h2>
             <p className="text-gray-400 text-lg">Built for speed, privacy, and simplicity</p>
           </div>
           
@@ -307,7 +307,7 @@ export default function Home() {
       <section className="py-24 bg-gradient-to-br from-purple-900/50 to-pink-900/50">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-white mb-4">Ready to Convert?</h2>
-          <p className="text-gray-300 text-lg mb-8">Join thousands of users who trust FileForge for their daily conversions.</p>
+          <p className="text-gray-300 text-lg mb-8">Join thousands of users who trust ConvertFlow for their daily conversions.</p>
           <a href="#tools" className="inline-block bg-white text-slate-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition">
             Get Started — Free
           </a>
@@ -319,10 +319,10 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <img src="/logo.png" alt="FileForge" className="w-8 h-8 rounded-lg" />
-              <span className="font-semibold text-white">FileForge</span>
+              <img src="/logo.png" alt="ConvertFlow" className="w-8 h-8 rounded-lg" />
+              <span className="font-semibold text-white">ConvertFlow</span>
             </div>
-            <p className="text-gray-500 text-sm">© 2024 FileForge. A subsidiary of Ricks Limited. All rights reserved.</p>
+            <p className="text-gray-500 text-sm">© 2024 ConvertFlow. A subsidiary of Ricks Limited. All rights reserved.</p>
           </div>
         </div>
       </footer>

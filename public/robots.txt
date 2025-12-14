@@ -1,9 +1,9 @@
-# robots.txt for FileForge
+# robots.txt for ConvertFlow
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://fileforge.tools/sitemap.xml
+Sitemap: https://convertflow.site/sitemap.xml
 
 # Crawl-delay (optional, be nice to servers)
 Crawl-delay: 1

@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-const baseUrl = 'https://fileforge.tools';
+const baseUrl = 'https://convertflow.site';
 
 export const toolsSEO: Record<string, { title: string; description: string; keywords: string[] }> = {
   'merge-pdf': {
@@ -205,7 +205,7 @@ export function generateToolStructuredData(toolSlug: string) {
     },
     provider: {
       '@type': 'Organization',
-      name: 'FileForge',
+      name: 'ConvertFlow',
       url: baseUrl,
     },
   };
