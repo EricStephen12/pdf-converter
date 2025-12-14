@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     creator: "@convertflow",
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "google18702c24803ee8f3",
   },
   alternates: {
     canonical: "https://convertflow.com",
